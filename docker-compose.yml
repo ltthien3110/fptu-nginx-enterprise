@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: fptu-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./sites-available:/etc/nginx/conf.d
+      - ./web-content:/usr/share/nginx/html
+
