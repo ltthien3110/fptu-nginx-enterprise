@@ -10,4 +10,11 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./sites-available:/etc/nginx/conf.d
       - ./web-content:/usr/share/nginx/html
+    depends_on:
+      - php
 
+  php:
+    image: php:8.2-fpm
+    container_name: fptu-php
+    volumes:
+      - ./web-content:/usr/share/nginx/html
