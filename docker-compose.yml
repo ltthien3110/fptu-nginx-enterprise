@@ -20,3 +20,18 @@ services:
     container_name: fptu-php
     volumes:
       - ./web-content:/usr/share/nginx/html
+  backend1:
+    image: nginx:alpine
+    container_name: fptu-backend1
+    volumes:
+      - ./web-content/backend1:/usr/share/nginx/html
+    ports:
+      - "8081:80"
+
+  backend2:
+    image: nginx:alpine
+    container_name: fptu-backend2
+    volumes:
+      - ./web-content/backend2:/usr/share/nginx/html
+    ports:
+      - "8082:80"
