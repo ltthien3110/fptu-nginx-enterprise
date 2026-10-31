@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: nginx:latest
+    build: .
     container_name: fptu-nginx
     ports:
       - "80:80"
