@@ -1,1 +1,1 @@
-<?php phpinfo(); ?>
+<?php echo "PHP-FPM Working Successfully"; ?>
