@@ -3,6 +3,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y nginx libnginx-mod-http-auth-pam fcgiwrap spawn-fcgi krb5-kdc krb5-admin-server libpam-krb5
 
+RUN useradd -m -s /bin/bash testuser && echo "testuser:123456" | chpasswd
+
 RUN echo "[libdefaults]\n    default_realm = FPTU.LOCAL\n\n[realms]\n    FPTU.LOCAL = {\n        kdc = localhost\n        admin_server = localhost\n    }" > /etc/krb5.conf
 
 RUN echo "auth sufficient pam_krb5.so use_first_pass\naccount sufficient pam_krb5.so" > /etc/pam.d/nginx-krb5
