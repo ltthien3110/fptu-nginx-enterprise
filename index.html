@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPTU Nginx Enterprise - Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 40px 20px; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #f26d21; font-size: 2.5em; margin-bottom: 10px; } /* Màu cam FPT */
+        .header p { color: #6c757d; font-size: 1.2em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e9ecef; transition: transform 0.2s, box-shadow 0.2s; border-top: 4px solid #f26d21; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); border-top-color: #007bff; }
+        .card h3 { margin-top: 0; color: #2b3035; font-size: 1.4em; }
+        .card p { color: #6c757d; font-size: 0.95em; min-height: 65px; }
+        .action-links { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: background 0.2s; text-align: center; }
+        .btn-primary { background-color: #f26d21; color: white; border: 1px solid #f26d21; }
+        .btn-primary:hover { background-color: #d85c18; }
+        .btn-outline { background-color: transparent; color: #007bff; border: 1px solid #007bff; }
+        .btn-outline:hover { background-color: #007bff; color: white; }
+        .footer { text-align: center; margin-top: 50px; color: #adb5bd; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HỆ THỐNG NGINX ENTERPRISE</h1>
+            <p>Bảng điều khiển & Trình diễn Đồ án (Demo Dashboard)</p>
+        </div>
+
+        <div class="grid">
+            <!-- Tính năng 1: Xác thực đa lớp -->
+            <div class="card">
+                <h3>1. Bảo mật Thư mục (Auth)</h3>
+                <p>Hệ thống phân quyền truy cập 3 lớp độc lập: Basic, PAM (Linux) và Kerberos (SSO Doanh nghiệp).</p>
+                <div class="action-links">
+                    <a href="/basic-secure/" target="_blank" class="btn btn-outline">Basic Auth</a>
+                    <a href="/pam-secure/" target="_blank" class="btn btn-outline">PAM Auth</a>
+                    <a href="/kerberos-secure/" target="_blank" class="btn btn-primary">Kerberos (SSO)</a>
+                </div>
+            </div>
+
+            <!-- Tính năng 2: Cân bằng tải -->
+            <div class="card">
+                <h3>2. Cân bằng tải & Failover</h3>
+                <p>Nginx Gateway phân phối lưu lượng bằng thuật toán Round-Robin và tự động cách ly máy chủ lỗi.</p>
+                <div class="action-links">
+                    <a href="/load-balancer/" target="_blank" class="btn btn-primary">Test Load Balancing</a>
+                </div>
+            </div>
+
+            <!-- Tính năng 3: Không gian cá nhân -->
+            <div class="card">
+                <h3>3. Trang web Cá nhân (Userdir)</h3>
+                <p>Cung cấp không gian làm việc riêng biệt (~username) cho từng nhân viên hệ thống.</p>
+                <div class="action-links">
+                    <a href="/~testuser/" target="_blank" class="btn btn-outline">Truy cập ~testuser</a>
+                </div>
+            </div>
+
+            <!-- Tính năng 4: Ứng dụng động -->
+            <div class="card">
+                <h3>4. Xử lý PHP & CGI</h3>
+                <p>Tích hợp PHP-FPM và fcgiwrap để xử lý các kịch bản động thay vì chỉ HTML tĩnh.</p>
+                <div class="action-links">
+                    <a href="/info.php" target="_blank" class="btn btn-primary">Test PHP-FPM</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 - Đồ án Nginx FPTU | Sinh viên thực hiện: Lê Thị Thiện
+        </div>
+    </div>
+</body>
+</html>
